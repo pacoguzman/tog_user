@@ -16,6 +16,7 @@ en:
       login_to_short: . Login is too short, it should be at least 3 characters long
       login_in_use: . Login already in use
       email_in_use: . Email already in use
+      email_format: . Email does not appear to be a valid e-mail address
       name: Name
       login: Login
       email: Email

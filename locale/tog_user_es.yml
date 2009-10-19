@@ -16,6 +16,7 @@ es:
       login_to_short: . Usuario demasiado corto, debería tener al menos 3 caracteres
       login_in_use: . Usuario ya existe
       email_in_use: . Correo electrónico en uso
+      email_format: . El correo electrónico no es correcto
       name: Nombre
       login: Login
       email: Correo electrónico

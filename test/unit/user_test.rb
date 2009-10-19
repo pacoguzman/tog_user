@@ -70,6 +70,19 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  context "User email format" do
+
+    should "be valid" do
+      @chavez = Factory(:user, :login => 'chavez', :email => 'chavez@login.com')
+      assert_nil @chavez.errors.on(:email)
+    end
+
+    should "be invalid" do
+      @chavez = Factory(:user, :login => 'chavez', :email => 'chavez@login@com')
+      assert_not_nil @chavez.errors.on(:email)
+    end
+  end
+
   context "Users" do
     setup do 
       User.destroy_all
