@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   validates_length_of       :email,    :within => 3..100
   validates_uniqueness_of   :login, :case_sensitive => false, :message => I18n.t("tog_user.model.login_in_use")
   validates_uniqueness_of   :email, :case_sensitive => false, :message => I18n.t("tog_user.model.email_in_use")
-  validates_format_of       :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :message => I188n.t("tog_user.model.email_format")
+  validates_format_of       :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :message => I18n.t("tog_user.model.email_format")
   before_save :encrypt_password  
 
   after_create :send_activation_request
