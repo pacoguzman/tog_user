@@ -78,7 +78,8 @@ class UserTest < ActiveSupport::TestCase
     end
 
     should "be invalid" do
-      @chavez = Factory(:user, :login => 'chavez', :email => 'chavez@login@com')
+      @chavez = Factory.build(:user, :login => 'chavez', :email => 'chavez@login@com')
+      assert !@chavez.valid?
       assert_not_nil @chavez.errors.on(:email)
     end
   end
