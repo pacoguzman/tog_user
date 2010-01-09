@@ -100,7 +100,6 @@ class User < ActiveRecord::Base
 
     def send_activation_or_reset_mail
       UserMailer.deliver_activation(self) if self.recently_activated?
-      Activity.report(self, :activate, self) if self.recently_activated?
       UserMailer.deliver_reset_notification(self) if self.recently_forgot_password?       
     end
 
